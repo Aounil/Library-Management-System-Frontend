@@ -1,72 +1,89 @@
-# Library-Management-System-Frontend
-=======
-# Getting Started with Create React App
+# Library Management System – Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern, easy-to-use web application for managing libraries, built with React. This project serves as the frontend for the Library Management System, allowing users to manage books, members, and transactions through a clean and responsive interface.
 
-## Available Scripts
+> **Note:** This frontend is designed to work seamlessly with the [Library-Management-System-Backend-](https://github.com/Aounil/Library-Management-System-Backend-) — a Java Spring Boot REST API also created by [Aounil](https://github.com/Aounil).
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+- 📚 **Book Management:** Add, update, search, and remove books.
+- 👤 **Member Management:** Register members, view profiles(on going).
+- 🔄 **Issue & Return:** Track book issuance and returns, view transaction history.
+- 🔍 **Search & Filter:** Powerful search and filter options for books and members.
+- 🔒 **Authentication:** User login/logout and role-based access (if backend supports).
+- 🖥️ **Responsive Design:** Works on desktop and mobile browsers.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## Getting Started
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Prerequisites
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Node.js (v14 or higher)
+- npm (v6 or higher)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Installation
 
-### `npm run eject`
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Aounil/Library-Management-System-Frontend.git
+   cd Library-Management-System-Frontend
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Running the App
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Start the development server:
+```bash
+npm start
+```
+Visit [http://localhost:3000](http://localhost:3000) in your browser.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Building for Production
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```bash
+npm run build
+```
+The production-ready files will be in the `build/` directory.
 
-## Learn More
+## Connecting to the Backend
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+This frontend is tightly integrated with the [Library-Management-System-Backend-](https://github.com/Aounil/Library-Management-System-Backend-) — a RESTful API built in Java Spring Boot by [Aounil](https://github.com/Aounil).  
+To use all features, make sure the backend server is running and accessible. You may need to update the API base URL in the frontend configuration to match your backend server's address.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Technologies Used
 
-### Code Splitting
+- [React](https://reactjs.org/)
+- JavaScript (ES6+)
+- HTML5 & CSS3
+- [Create React App](https://github.com/facebook/create-react-app)
+- Axios or Fetch API for backend communication
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Folder Structure
 
-### Analyzing the Bundle Size
+```
+src/
+  components/     # Reusable UI components
+  pages/          # Main application pages
+  services/       # API calls
+  utils/          # Utility functions
+  App.js          # Main app component
+  index.js        # Entry point
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Contributing
 
-### Making a Progressive Web App
+Contributions are welcome! Please open an issue or submit a pull request.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## License
 
-### Advanced Configuration
+MIT
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Author
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[Aounil](https://github.com/Aounil) (Fullstack developer: backend & frontend)
