@@ -1,0 +1,22 @@
+/* body {
+    background-color: #012B37 !important;
+  } */
+.login {
+   width: 30% !important;
+   margin-top: 80px;
+   background-color: rgb(255, 255, 0);
+   border-radius: 30px;
+   padding: 30px;
+   box-shadow: 0px 0px 41px -4px rgba(0, 195, 255, 0.75);
+}
+
+.sign {
+    width: 30% !important;
+    margin-top: 80px;
+    background-color: rgb(0, 208, 255); 
+    border-radius: 30px;
+    padding: 30px;
+    box-shadow: 0px 0px 41px -4px rgba(238, 255, 0, 0.75);
+}
+
+

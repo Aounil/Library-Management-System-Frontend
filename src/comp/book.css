@@ -1,0 +1,17 @@
+
+
+.bookC {
+    background-color: gray;
+    width:100%;
+    padding: 10px;
+    margin: 9px 9px;
+    border-radius: 20px;
+}
+
+.card {
+    transition: transform ease 0.5s;
+}
+
+.card:hover{
+    transform: scale(1.1);
+}

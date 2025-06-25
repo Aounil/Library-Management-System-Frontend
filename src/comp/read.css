@@ -1,0 +1,12 @@
+body {
+    background-color: antiquewhite !important;
+}
+
+
+
+.pic-read {
+    margin: 40px;
+    box-shadow: -1px -3px 48px -4px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: -1px -3px 48px -4px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: -1px -3px 48px -4px rgba(0, 0, 0, 0.75);
+}
