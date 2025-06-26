@@ -13,6 +13,7 @@ export function UserProvider({ children }) {
 
     //this is the global variables
     const [name, setName] = useState(null)
+    const [email , setEmail] = useState(null)
 
     //in load we try to get the username from local storage if it exists
 
@@ -22,7 +23,9 @@ export function UserProvider({ children }) {
         if (token) {
             const decoded_token = jwtDecode(token);
             const name = decoded_token.name; // This must match your backend JWT
+            const email = decoded_token.sub
             setName(name); // update context
+            setEmail(email)
         }
 
 
@@ -34,7 +37,7 @@ export function UserProvider({ children }) {
         //That provider gives access to the data you define inside value={...} 
         // to any child component below it in the React tree.
 
-        <UserContext.Provider value={{ name, setName }} >
+        <UserContext.Provider value={{ name, setName , email , setEmail}} >
             {children}
             {/* these are the children that can acces the global var */}
         </UserContext.Provider>

@@ -9,6 +9,7 @@ import { jwtDecode } from "jwt-decode";
 export default function Hello() {
   //hna dok values lli drti f usercontext
   const { setName } = useContext(UserContext)
+  const {setEmail} = useContext(UserContext)
 
 
 
@@ -51,7 +52,7 @@ export default function Hello() {
         // Handle successful registration
         localStorage.setItem('authToken', data.token);
         console.log('User registered successfully');
-        getname(data.token);
+        getinfo(data.token);
         navigate('/Books')
         handleUser(e); // Switch back to login state
 
@@ -78,22 +79,22 @@ export default function Hello() {
       const response = await fetch('http://localhost:8080/api/v1/auth/authenticate', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json', // Set Content-Type to JSON
+          'Content-Type': 'application/json', 
 
         },
-        body: JSON.stringify(payload), // Send data as JSON
+        body: JSON.stringify(payload), 
       });
 
       const data = await response.json();
       console.log('Response:', data);
 
       if (response.ok) {
-        // Store the token in localStorage
+       
         localStorage.setItem('authToken', data.token);
-        getname(data.token);
+        getinfo(data.token);
         console.log('User authenticated successfully');
         navigate('/Books');
-        setIsuser(false); // Switch back to sign-up state (you can redirect to another page here)
+        setIsuser(false); 
       } else {
         console.log('Error:', data);
       }
@@ -103,12 +104,16 @@ export default function Hello() {
   };
 
 
-  const getname = (token) => {
+  const getinfo = (token) => {
     const decoded_token = jwtDecode(token);
+    const email = decoded_token.sub
     const name = decoded_token.name; // This must match your backend JWT
     // localStorage.setItem("name", name); // persist it
     setName(name); // update context
+    setEmail(email)
   };
+
+
   
 
   return (
