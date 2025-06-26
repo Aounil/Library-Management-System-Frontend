@@ -5,6 +5,7 @@ import Books from "./Books";
 import { UserProvider } from "./UserContext";
 import NV from './NV';
 import Read from "./Read";
+import Favorite from "./Favorite";
 
 export default function App() {
   return (
@@ -15,6 +16,7 @@ export default function App() {
           <Route path="/" element={<Hello />} />
           <Route path="/Books" element={<Books />} />
           <Route path="/read" element={<Read />} />
+          <Route path="/Favorite" element={<Favorite />} />
         </Routes>
       </Router>
     </UserProvider>

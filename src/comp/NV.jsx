@@ -24,6 +24,7 @@ function NV() {
           <Nav className="me-auto">
             <Nav.Link href="/">Home</Nav.Link>
             <Nav.Link href="/books">Books</Nav.Link>
+            <Nav.Link href='/Favorite'>Fav</Nav.Link>
           </Nav>
           <Navbar.Text>
             Signed in as: <a href="#login">{name ? name : "Guest"}</a>

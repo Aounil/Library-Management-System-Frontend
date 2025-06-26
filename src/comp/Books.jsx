@@ -13,7 +13,6 @@ export default function Books() {
   const [favbooks, setFavbooks] = useState({});
   const auth = localStorage.getItem('authToken');
   const navigate = useNavigate();
-  const { email } = useContext(UserContext);
 
   // Fetch all books
   const getBooks = async () => {
@@ -38,26 +37,27 @@ export default function Books() {
     }
   };
 
-  // Fetch user's favorites (IDs) TODO this will be used in diff comp
-  const getFavorites = async () => {
-    try {
-      const response = await fetch('http://localhost:8080/books/favourite', {
-        method: 'GET',
-        headers: {
-          'Authorization': 'Bearer ' + auth
-        }
-      });
-      if (response.ok) {
-        const data = await response.json();
-        // Data should be a list of book objects; map to a lookup
-        const favs = {};
-        data.forEach(book => favs[book.id] = true);
-        setFavbooks(favs);
+  const fetchFavorites = async () => {
+  try {
+    const response = await fetch('http://localhost:8080/books/favourite', {
+      method: 'GET',
+      headers: {
+        'Authorization': 'Bearer ' + auth
       }
-    } catch (error) {
-      console.error("Error fetching favorites:", error);
+    });
+    if (response.ok) {
+      const data = await response.json();
+      // data should be an array of favorite books
+      const favMap = {};
+      data.forEach(book => {
+        favMap[book.id] = true;
+      });
+      setFavbooks(favMap);
     }
-  };
+  } catch (error) {
+    console.error("Error fetching favorites:", error);
+  }
+};
 
   // Add favorite
   const addFavorite = async (bookId) => {
@@ -72,6 +72,7 @@ export default function Books() {
       });
       if (response.ok) {
         setFavbooks(prev => ({ ...prev, [bookId]: true }));
+
       }
     } catch (error) {
       console.error("Error adding favorite:", error);
@@ -99,7 +100,7 @@ export default function Books() {
     }
   };
 
-  // Load book covers/descriptions (as you had)
+  // Load book covers/descriptions 
   useEffect(() => {
     const cover = JSON.parse(localStorage.getItem('bookCovers'))
     const description = JSON.parse(localStorage.getItem('bookDescriptions'))
@@ -143,6 +144,7 @@ export default function Books() {
 
   useEffect(() => {
     getBooks();
+    fetchFavorites();
   }, []);
 
   useEffect(() => {
